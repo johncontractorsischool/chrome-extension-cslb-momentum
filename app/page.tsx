@@ -84,7 +84,7 @@ export default function Home() {
 
             <div className="space-y-3">
               <h2 className="text-xl font-semibold text-slate-900">Contact</h2>
-              <p className="text-slate-700">For questions, contact: [your contact email].</p>
+              <p className="text-slate-700">For questions, contact: john@contractorsischool.com.</p>
             </div>
           </div>
         </section>
