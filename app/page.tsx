@@ -1,65 +1,94 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-slate-50 text-slate-900">
+      <div className="mx-auto flex min-h-screen max-w-3xl flex-col gap-10 px-6 py-16">
+        <header className="space-y-3 text-center sm:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+            Privacy Policy
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          <h1 className="text-4xl font-bold leading-tight text-slate-900">
+            CSLB Momentum Checker
+          </h1>
+          <p className="text-lg text-slate-700">
+            This page explains what the extension does, what data it touches, and how it is handled.
+          </p>
+        </header>
+
+        <section className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+          <div className="space-y-8">
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-slate-900">What this extension does</h2>
+              <p className="text-slate-700">
+                CSLB Momentum Checker lets users look up CSLB license/application records, check for an existing
+                Momentum CRM prospect, and create a new prospect if needed.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-slate-900">Data we process</h2>
+              <ul className="list-disc space-y-2 pl-5 text-slate-700">
+                <li>User inputs: license/application numbers entered into the popup.</li>
+                <li>CSLB results: public business/license information returned by the CSLB API.</li>
+                <li>Momentum data: prospect data returned from the Momentum API.</li>
+                <li>Local settings: the extension may store minimal preferences (e.g., last search type) using Chrome storage.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-slate-900">What we do not do</h2>
+              <ul className="list-disc space-y-2 pl-5 text-slate-700">
+                <li>We do not collect, sell, rent, or share personal data with third parties.</li>
+                <li>We do not use analytics, tracking pixels, or advertising identifiers.</li>
+                <li>We do not read or modify data on other websites.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-slate-900">Where data goes</h2>
+              <ul className="list-disc space-y-2 pl-5 text-slate-700">
+                <li>
+                  Requests are sent only to the declared API host (https://now-certs-api.vercel.app/*) to fetch CSLB data,
+                  search Momentum, and create/update prospects.
+                </li>
+                <li>No other hosts are contacted.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-slate-900">Storage and retention</h2>
+              <ul className="list-disc space-y-2 pl-5 text-slate-700">
+                <li>Only minimal preferences may be stored locally via Chrome storage.</li>
+                <li>We do not maintain server-side logs tied to user identities beyond what the API host may need for basic operation.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-slate-900">Security</h2>
+              <ul className="list-disc space-y-2 pl-5 text-slate-700">
+                <li>All API calls use HTTPS.</li>
+                <li>No remote scripts or external code are executed beyond the packaged extension code.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-slate-900">Children</h2>
+              <p className="text-slate-700">The extension is not directed to children under 13.</p>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-slate-900">Changes</h2>
+              <p className="text-slate-700">
+                We may update this policy; material changes will be reflected in an updated version of this text.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-slate-900">Contact</h2>
+              <p className="text-slate-700">For questions, contact: [your contact email].</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
